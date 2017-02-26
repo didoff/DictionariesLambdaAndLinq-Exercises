@@ -10,37 +10,38 @@ namespace MinerTask
     {
         static void Main(string[] args)
         {
+
             string resourceName = Console.ReadLine();
             int resourceQuantity = int.Parse(Console.ReadLine());
-
             // What if inputs are stop?
 
             Dictionary<string, int> resources = new Dictionary<string, int>();
 
             while(true)
             {
-                try
-                {
-                    resources.Add(resourceName, resourceQuantity);
-                }
-                catch
-                {
-                    int previous;
-                    bool y = resources.TryGetValue(resourceName, out previous);
+                    try
+                    {
+                        resources.Add(resourceName, resourceQuantity);
+                    }
+                    catch
+                    {
+                        int previous;
+                        bool y = resources.TryGetValue(resourceName, out previous);
 
-                    resources[resourceName] = resourceQuantity + previous;
+                        resources[resourceName] = resourceQuantity + previous;
 
-                }
-                
-                resourceName = Console.ReadLine();
-                if(resourceName != "stop")
-                {
-                    resourceQuantity = int.Parse(Console.ReadLine());
-                }
-                else
-                {
-                    break;
-                }
+                    }
+
+                    resourceName = Console.ReadLine();
+                    if (resourceName != "stop")
+                    {
+                        resourceQuantity = int.Parse(Console.ReadLine());
+                    }
+                    else
+                    {
+                        break;
+                    }
+                    
             }
             
 
