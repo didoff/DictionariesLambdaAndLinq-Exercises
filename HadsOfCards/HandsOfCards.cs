@@ -28,12 +28,23 @@ namespace HadsOfCards
 
                 playersCards[playerName].AddRange(cards);
 
+                cardsPower(cards);
+
                 commandLine = Console.ReadLine();
 
             }
 
-            // Still a lot to do>!
+            // Still a lot to do!
+            // ^^
 
+        }
+
+        private static int cardsPower(List<string> cards)
+        {
+            int power = 0;
+
+            // ZADAI MUU!
+            return power;
         }
     }
 }
