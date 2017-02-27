@@ -18,14 +18,24 @@ namespace FixEmails
                 string email;
                 if (!name.Contains("stop"))
                 {
-                    email = Console.ReadLine();
+                    email = Console.ReadLine().ToLower();
+                    string[] domain = email.Split('.').Skip(1).ToArray();
+
+                    if(domain[0] == "us" || domain[0] == "uk")
+                    {
+                        continue;
+                    }
+                    else
+                    {
+                        NameEmail.Add(name, email);
+                    }
+
                 }
                 else
                 {
                     break;
                 }
 
-                NameEmail.Add(name, email);
             }
 
             //foreach (var entry in NameEmail)
